@@ -1,0 +1,40 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "DM Sans", sans-serif;
+  --color-gold: #D4AF37;
+  --color-gold-light: #F0D060;
+  --color-gold-dark: #A08820;
+  --color-bg-dark: #0A0A0A;
+  --color-bg-card: #1A1A1A;
+}
+
+body {
+  background-color: var(--color-bg-dark);
+  color: #F5F0E8;
+  font-family: var(--font-sans);
+}
+
+/* Noise texture overlay */
+.noise-overlay::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #fff 30%, var(--color-gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-gold-gradient {
+  background: linear-gradient(135deg, var(--color-gold-dark), var(--color-gold), var(--color-gold-light));
+}
