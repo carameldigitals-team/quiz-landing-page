@@ -983,6 +983,8 @@ function SocialUrgency({ visible }: { visible: boolean }) {
     "🟢 Ibrahim from kano just got the 72-hour challenge",
     "🟢 John from delta just discovered he is AI business Accelerator",
     "🟢 Marcus from Lagos completed his quiz — 2 minutes ago",
+    "🟢 Tunde from Anambra just discovered that he is AI Business Accelerator",
+    "🟢 Chinwe from Port Harcourt just joined the 72-HOUR CHALLENGE",
     "🟢 5 people are taking this quiz right now"
   ];
 
@@ -1012,31 +1014,16 @@ function SocialUrgency({ visible }: { visible: boolean }) {
     <AnimatePresence>
       {visible && show && (
         <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ 
-            opacity: 1, 
-            scale: 1,
-            x: [0, 100, 0, -100, 0],
-            y: [0, -100, -200, -100, 0],
-          }}
-          exit={{ opacity: 0, scale: 0.5 }}
-          transition={{
-            opacity: { duration: 0.5 },
-            scale: { duration: 0.5 },
-            x: { duration: 20, repeat: Infinity, ease: "linear" },
-            y: { duration: 20, repeat: Infinity, ease: "linear" }
-          }}
-          className="fixed bottom-20 left-1/2 -translate-x-1/2 z-[100] max-w-[320px] w-full"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -20 }}
+          className="fixed bottom-6 left-6 z-[100] max-w-[280px] w-full"
         >
-          <div className="bg-zinc-900/90 backdrop-blur-md border border-gold/30 p-4 rounded-2xl shadow-[0_0_30px_rgba(212,175,55,0.2)] flex items-center gap-4">
-            <motion.div 
-              animate={{ rotate: 360 }}
-              transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-              className="flex-shrink-0 w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-xl"
-            >
+          <div className="bg-zinc-900/95 backdrop-blur-md border border-gold/20 p-3 rounded-xl shadow-xl flex items-center gap-3">
+            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gold/10 flex items-center justify-center text-lg">
               🚀
-            </motion.div>
-            <div className="text-sm font-medium text-zinc-200 leading-tight">
+            </div>
+            <div className="text-[11px] font-medium text-zinc-200 leading-tight">
               {notifications[index]}
             </div>
           </div>
